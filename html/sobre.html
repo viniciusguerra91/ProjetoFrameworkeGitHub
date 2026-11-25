@@ -1,0 +1,127 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre - GTA 6</title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+</head>
+
+<body class="d-flex flex-column min-vh-100">
+
+    <!-- MENU -->
+    <header class="bg-dark">
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <div class="container py-2">
+                <a class="navbar-brand fw-semibold" href="index.html">Rockstar Games</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#menuPrincipal" aria-controls="menuPrincipal"
+                    aria-expanded="false" aria-label="Abrir menu">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="menuPrincipal">
+                    <ul class="navbar-nav ms-auto gap-lg-3">
+                        <li class="nav-item"><a class="nav-link" href="index.html">Página Inicial</a></li>
+                        <li class="nav-item"><a class="nav-link active" href="sobre.html" aria-current="page">Sobre</a></li>
+                        <li class="nav-item"><a class="nav-link" href="contato.html">Contato</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container my-5 flex-grow-1">
+        <h1 class="text-center mb-4">Sobre o GTA 6</h1>
+
+        <!-- APRESENTAÇÃO -->
+        <section class="row align-items-center g-4">
+            <div class="col-md-6">
+                <img src="../img/gtaseis.jpg" class="img-fluid rounded shadow-sm" alt="Banner GTA 6">
+            </div>
+            <div class="col-md-6">
+                <p>O GTA 6 é um dos jogos mais aguardados da atualidade, trazendo gráficos modernos, novas mecânicas e um mapa ainda maior.</p>
+                <p>A Rockstar Games busca elevar o nível dos jogos de mundo aberto, entregando mais realismo, inteligência artificial avançada e maior liberdade.</p>
+                <a href="index.html#galeriaGTA" class="btn btn-primary">Ver galeria</a>
+            </div>
+        </section>
+
+        <!-- ACORDEÃO -->
+        <section class="my-5">
+            <h2 class="text-center mb-4">Conheça os destaques do jogo</h2>
+            <div class="accordion" id="accordionGTA">
+
+                <div class="accordion-item">
+                    <h3 class="accordion-header">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#mundo" aria-expanded="true" aria-controls="mundo">
+                            Mundo Aberto
+                        </button>
+                    </h3>
+                    <div id="mundo" class="accordion-collapse collapse show" data-bs-parent="#accordionGTA">
+                        <div class="accordion-body">Explore o cenário, as ruas, os veículos e a atmosfera do universo de GTA 6.</div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <h3 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#personagens" aria-expanded="false" aria-controls="personagens">
+                            Personagens e História
+                        </button>
+                    </h3>
+                    <div id="personagens" class="accordion-collapse collapse" data-bs-parent="#accordionGTA">
+                        <div class="accordion-body">Uma narrativa com novos protagonistas e encontros que fazem parte do universo do jogo.</div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <h3 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#graficos" aria-expanded="false" aria-controls="graficos">
+                            Gráficos e Ambientação
+                        </button>
+                    </h3>
+                    <div id="graficos" class="accordion-collapse collapse" data-bs-parent="#accordionGTA">
+                        <div class="accordion-body">Os cenários de GTA 6 mostram ruas movimentadas, paisagens tropicais e uma atmosfera vibrante.</div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- BOTÃO MODAL -->
+        <section class="text-center bg-light rounded p-4">
+            <h2 class="h4">Mais sobre o universo GTA 6</h2>
+            <p>Descubra um pouco mais sobre os cenários e a atmosfera do jogo.</p>
+            <button class="btn btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#modalProjeto">Saiba mais</button>
+        </section>
+    </main>
+
+    <!-- MODAL -->
+    <div class="modal fade" id="modalProjeto" tabindex="-1" aria-labelledby="tituloModal" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2 class="modal-title fs-5" id="tituloModal">O universo de Vice City</h2>
+                    <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Fechar"></button>
+                </div>
+                <div class="modal-body">
+                    <p>GTA 6 apresenta uma nova história ambientada no estado fictício de Leonida, que inclui Vice City e seus arredores.</p>
+                    <p>O cenário combina praias, avenidas iluminadas, bairros urbanos e diferentes ambientes para explorar.</p>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" type="button" data-bs-dismiss="modal">Fechar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- RODAPÉ -->
+    <footer class="bg-dark text-white text-center py-3 mt-auto">
+        <div class="container">© 2026 • GTA 6</div>
+    </footer>
+
+    <script src="../js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

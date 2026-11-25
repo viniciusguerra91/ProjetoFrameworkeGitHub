@@ -1,0 +1,121 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contato - GTA 6</title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+</head>
+
+<body class="d-flex flex-column min-vh-100">
+
+    <!-- MENU -->
+    <header class="bg-dark">
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <div class="container py-2">
+                <a class="navbar-brand fw-semibold" href="index.html">Rockstar Games</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#menuPrincipal" aria-controls="menuPrincipal"
+                    aria-expanded="false" aria-label="Abrir menu">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="menuPrincipal">
+                    <ul class="navbar-nav ms-auto gap-lg-3">
+                        <li class="nav-item"><a class="nav-link" href="index.html">Página Inicial</a></li>
+                        <li class="nav-item"><a class="nav-link" href="sobre.html">Sobre</a></li>
+                        <li class="nav-item"><a class="nav-link active" href="contato.html" aria-current="page">Contato</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container my-5 flex-grow-1">
+        <h1 class="text-center mb-4">Contato</h1>
+
+        <section class="row g-4">
+            <!-- FORMULÁRIO -->
+            <div class="col-md-6">
+                <form id="formContato" class="bg-light border rounded p-4 needs-validation" novalidate>
+                    <div class="mb-3">
+                        <label for="nome" class="form-label">Nome</label>
+                        <input id="nome" type="text" class="form-control" placeholder="Digite seu Nome" minlength="3" required>
+                        <div class="invalid-feedback">Informe seu nome com pelo menos 3 caracteres.</div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="email" class="form-label">E-mail</label>
+                        <input id="email" type="email" class="form-control" placeholder="Digite seu E-mail" required>
+                        <div class="invalid-feedback">Digite um e-mail válido.</div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="assunto" class="form-label">Assunto</label>
+                        <input id="assunto" type="text" class="form-control" placeholder="Digite o Assunto" required>
+                        <div class="invalid-feedback">Informe o assunto.</div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="mensagem" class="form-label">Mensagem</label>
+                        <textarea id="mensagem" class="form-control" rows="6" placeholder="Digite sua Mensagem" minlength="10" required></textarea>
+                        <div class="invalid-feedback">Digite pelo menos 10 caracteres.</div>
+                    </div>
+                    <button class="btn btn-primary w-100" type="submit">Enviar</button>
+                </form>
+            </div>
+
+            <!-- INFORMAÇÕES -->
+            <div class="col-md-6">
+                <div class="text-center">
+                    <img src="../img/contato.jpg" class="img-fluid rounded mb-4" alt="Logo Rockstar Games">
+                </div>
+                <h2 class="text-center">Entre no Universo GTA 6</h2>
+                <div class="bg-light p-3 rounded mt-3">
+                    <p class="mb-0"><strong>Empresa:</strong> Rockstar Games</p>
+                </div>
+                <div class="bg-light p-3 rounded mt-3">
+                    <p class="mb-0"><strong>Criador do site:</strong> Vinícius André Guerra</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- MODAL -->
+    <div class="modal fade" id="modalConfirmacao" tabindex="-1" aria-labelledby="tituloConfirmacao" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2 class="modal-title fs-5" id="tituloConfirmacao">Mensagem preenchida com sucesso!</h2>
+                    <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Fechar"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Obrigado, <strong id="nomeConfirmacao"></strong></p>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-primary" type="button" data-bs-dismiss="modal">Fechar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- RODAPÉ -->
+    <footer class="bg-dark text-white text-center py-3 mt-auto">
+        <div class="container">© 2026 • GTA 6</div>
+    </footer>
+
+    <script src="../js/bootstrap.bundle.min.js"></script>
+    <script>
+        const formulario = document.getElementById('formContato');
+        formulario.addEventListener('submit', function(evento) {
+            evento.preventDefault();
+            formulario.classList.add('was-validated');
+            if (!formulario.checkValidity()) return;
+
+            document.getElementById('nomeConfirmacao').textContent =
+                document.getElementById('nome').value.trim();
+
+            bootstrap.Modal.getOrCreateInstance(document.getElementById('modalConfirmacao')).show();
+            formulario.reset();
+            formulario.classList.remove('was-validated');
+        });
+    </script>
+</body>
+</html>
